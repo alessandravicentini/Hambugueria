@@ -1,0 +1,34 @@
+.App{
+  text-align: center;
+  font-family: Inter;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e0e0e0; 
+}
+
+span, p, h3{
+  cursor: default;
+}
+
+button{
+  cursor: pointer;
+}
+
+@media (min-width: 870px){
+
+.div-content{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
+
+}
+
+
+

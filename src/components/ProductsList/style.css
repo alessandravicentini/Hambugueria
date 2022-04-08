@@ -1,0 +1,20 @@
+.div-all-products{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    overflow: auto;
+}
+
+@media (min-width: 870px){
+
+.div-all-products{
+    width: 70%;
+
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+}
