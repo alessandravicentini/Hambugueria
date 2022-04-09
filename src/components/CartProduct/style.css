@@ -65,3 +65,19 @@
 .div-cart-product button:active{
     color: #828282;
 }
+
+.span-qtd{
+    color: #bdbdbd;
+    font-size: 11px;
+
+    width: 100%;
+
+    text-align: left;
+}
+
+.div-cart-product-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}

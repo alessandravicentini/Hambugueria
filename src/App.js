@@ -22,33 +22,38 @@ function App() {
   const [currentSale, setCurrentSale] = useState([])
   const [cartTotal, setCartTotal] = useState(0)
   const [inputValue, setInputValue] = useState('')
+  const [display, setDisplay] = useState('div-results-hidden')
 
   useEffect(() => {
     fetch('https://hamburgueria-kenzie-json-serve.herokuapp.com/products')
     .then((response) => response.json())
-    .then((data) => setProducts(data))
-  }, [filteredProducts])
+    .then((data) => {
+      setProducts(data);
+      setFilteredProducts(data)
+      setInputValue('')
+    });
+  }, [])
+
 
   const showProducts = (inputValue) => {
-    setFilteredProducts(products.filter((product) => product.name.toLowerCase().includes(inputValue.toLowerCase())))
-    console.log(filteredProducts)
+    const filter = products.filter((product) => product.name.toLowerCase().includes(inputValue.toLowerCase()) || product.category.toLowerCase().includes(inputValue.toLowerCase()))
+    setFilteredProducts(filter)
   }
   
   const handleClick = (clickedId) => {
-    // const result = products.find((product) => product.id === 2)
-    // setCurrentSale(products.find((product) => product.id === clickedId))
-    // setCurrentSale([...currentSale, sale])
-    //recebe id do produto por parâmetro e usa find pra procurar no [products] e adicionar no currentSale
+    const result = products.find((product) => product.id === clickedId)
+
+    setCurrentSale([...currentSale, result])
   }
 
 
   return (
     <div className="App">
 
-      <Header showProducts={showProducts} inputValue={inputValue} setInputValue={setInputValue}/>
+      <Header showProducts={showProducts} inputValue={inputValue} setInputValue={setInputValue} setDisplay={setDisplay}/>
       <div className='div-content'>
-      <ProductList products={products} handleClick={handleClick}/>
-      <Cart currentSale={currentSale} setCurrentSale={setCurrentSale}/>
+      <ProductList products={filteredProducts} handleClick={handleClick} inputValue={inputValue} setInputValue={setInputValue} showProducts={showProducts} display={display} setDisplay={setDisplay}/>
+      <Cart currentSale={currentSale} setCurrentSale={setCurrentSale} cartTotal={cartTotal} setCartTotal={setCartTotal} />
       </div>
 
     </div>
