@@ -45,3 +45,8 @@
     color: #FFFFFF;
     font-size: 12px;
 }
+
+form{
+    display: flex;
+    flex-direction: row;
+}
