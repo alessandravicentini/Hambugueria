@@ -73,5 +73,14 @@
     font-size: 14px;
 }
 
+@media (min-width: 870px){
+
+.div-cart, .div-empty-cart{
+    margin-top: 135px;
+
+}
+
+}
+
 
 
