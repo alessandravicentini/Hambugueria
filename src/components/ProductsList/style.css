@@ -44,7 +44,7 @@
 @media (min-width: 870px){
 
 .div-all-products{
-    width: 100%;
+    width: 95%;
 
     flex-wrap: wrap;
     justify-content: space-around;

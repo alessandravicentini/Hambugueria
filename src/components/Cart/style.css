@@ -1,5 +1,7 @@
+@media(min-width: 320px){
+
 .div-empty-cart, .div-cart{
-    width: 350px;
+    width: 19rem;
 
     margin: auto;
     margin-top: 50px;
@@ -71,6 +73,8 @@
 .body-empty-cart span{
     color: #828282;
     font-size: 14px;
+}
+
 }
 
 @media (min-width: 870px){
