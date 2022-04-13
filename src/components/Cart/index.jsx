@@ -1,7 +1,7 @@
 import { CartProduct } from "../CartProduct"
 import { CartTotal } from "../CartTotal"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export const Cart = ({currentSale, setCurrentSale, cartTotal, setCartTotal}) => {
 
@@ -16,7 +16,9 @@ export const Cart = ({currentSale, setCurrentSale, cartTotal, setCartTotal}) => 
         }
     }
 
-    addToCart()
+    useEffect(() => {
+        addToCart()
+    })
 
     return currentSale.length === 0 ? (
         <div className="div-empty-cart">

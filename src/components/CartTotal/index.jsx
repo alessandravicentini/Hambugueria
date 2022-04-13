@@ -1,8 +1,14 @@
+import { useEffect } from "react"
+
 export const CartTotal = ({cartTotal, setCartTotal, currentSale, setCurrentSale, setCartToRender}) => {
     
     const total = currentSale.reduce((a,b) => a + b.price, 0)
     const totalConverted = new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(total)
-    setCartTotal(totalConverted)
+
+    useEffect(() => {
+        setCartTotal(totalConverted)
+    },[totalConverted])
+    
 
     return (
         <div className="div-cart-total">
